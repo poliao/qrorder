@@ -28,4 +28,14 @@ public class menucontroller {
     public Optional<menuitem> getMenuItemById(@PathVariable("id") Long id) {
         return menuService.getMenuItemById(id);
     }
+
+    @PutMapping("/{id}")
+    public String updateMenu(@PathVariable("id") Long id, @RequestBody menuitem menuDTO) {
+        return menuService.updateMenu(id, menuDTO);
+    }
+
+    @DeleteMapping("/{id}")
+    public String deleteMenu(@PathVariable("id") Long id) {
+        return menuService.deleteMenu(id);
+    }
 }
